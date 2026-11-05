@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rosa Madder | Grupo VIP</title>
+<meta name="description" content="Se você é mulher de Manduri/SP e região, entre no Grupo VIP da Rosa Madder e fique por dentro das nossas novidades.">
+<meta name="theme-color" content="#F7F2EC">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rosa Madder | Grupo VIP">
+<meta property="og:description" content="Mulher de Manduri/SP e região: entre no nosso Grupo VIP e fique por dentro das novidades.">
+<meta property="og:image" content="img/look-vestido-folhagem-1080.webp">
+<link rel="icon" href="emblema-rosa.png">
+
+<link rel="preload" as="image" href="img/hero-recorte-1300.webp" imagesrcset="img/hero-recorte-900.webp 330w, img/hero-recorte-1300.webp 476w" imagesizes="(min-width: 900px) 30vw, 46vw" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --vinho:#95204A;
+    --vinho-escuro:#741838;
+    --creme:#F7F2EC;
+    --creme-claro:#FCFAF7;
+    --areia:#E9DFD3;
+    --linha:rgba(149,32,74,.22);
+    --tinta:#2A1C20;
+    --suave:#7A6A6E;
+    --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+    --sans:Jost,system-ui,-apple-system,"Segoe UI",sans-serif;
+    --ease:cubic-bezier(.22,.61,.36,1);
+    --ease-out:cubic-bezier(.16,1,.3,1);
+    --gutter:22px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:var(--sans);font-weight:400;color:var(--tinta);background:var(--creme);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 var(--gutter)}
+
+  /* textura de papel bem sutil */
+  body::before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.05;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  /* barra de progresso */
+  .progresso{position:fixed;top:0;left:0;right:0;height:2px;z-index:60;background:var(--vinho);transform-origin:0 50%;transform:scaleX(0)}
+
+  /* ---------- TIPOGRAFIA COMUM ---------- */
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-family:var(--sans);font-size:.68rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--vinho)}
+  .eyebrow::before,.eyebrow::after{content:"";width:26px;height:1px;background:currentColor;opacity:.55}
+  .titulo{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,7.6vw,3.2rem);line-height:1.08;letter-spacing:-.01em}
+  .titulo em{font-style:italic;color:var(--vinho)}
+  .lead{font-size:.98rem;color:var(--suave)}
+  .ornamento{display:flex;align-items:center;justify-content:center;gap:14px}
+  .ornamento::before,.ornamento::after{content:"";height:1px;width:56px;background:var(--linha)}
+  .ornamento img{width:18px;height:18px}
+
+  /* ---------- BOTÃO ---------- */
+  .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:14px;width:100%;max-width:360px;min-height:58px;padding:0 28px;border-radius:999px;background:var(--vinho);color:#fff;text-decoration:none;font-family:var(--sans);font-weight:500;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;overflow:hidden;isolation:isolate;transition:transform .5s var(--ease-out),box-shadow .5s var(--ease-out),background .4s var(--ease);box-shadow:0 18px 34px -18px rgba(149,32,74,.75);-webkit-tap-highlight-color:transparent}
+  .btn::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.28),transparent 55%);opacity:0;transition:opacity .4s var(--ease)}
+  .btn::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.25) 50%,transparent 70%);transform:translateX(-120%);animation:brilho 4.5s var(--ease) 2.2s infinite}
+  @keyframes brilho{0%{transform:translateX(-120%)}28%,100%{transform:translateX(120%)}}
+  .btn:hover{background:var(--vinho-escuro);transform:translateY(-2px);box-shadow:0 24px 44px -18px rgba(149,32,74,.9)}
+  .btn:hover::before{opacity:1}
+  .btn:active{transform:translateY(0) scale(.985)}
+  .btn:focus-visible{outline:2px solid var(--vinho);outline-offset:4px}
+  .btn .seta{width:18px;height:18px;transition:transform .5s var(--ease-out)}
+  .btn:hover .seta{transform:translateX(5px)}
+  .btn--claro{background:var(--creme-claro);color:var(--vinho);box-shadow:0 18px 34px -18px rgba(0,0,0,.45)}
+  .btn--claro:hover{background:#fff}
+  .btn--claro::before{background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(149,32,74,.12),transparent 55%)}
+  .btn--claro::after{background:linear-gradient(110deg,transparent 30%,rgba(149,32,74,.1) 50%,transparent 70%)}
+  .btn--claro:focus-visible{outline-color:#fff}
+  .microcopy{margin-top:14px;font-size:.76rem;color:var(--suave);letter-spacing:.04em}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;overflow:hidden;background:
+      radial-gradient(60% 50% at 78% 45%,rgba(149,32,74,.10),transparent 70%),
+      radial-gradient(50% 40% at 10% 90%,rgba(233,223,211,.9),transparent 70%),var(--creme)}
+  .hero-corpo{flex:1;display:grid;gap:4px;padding-top:16px;align-content:start}
+  .marca-mobile{order:-2;display:block;width:118px;height:auto;margin:0 auto 6px}
+  .hero-texto .marca img{height:auto}
+
+  /* lado visual */
+  .hero-visual{position:relative;height:40svh;min-height:290px;display:flex;justify-content:center;align-items:flex-end;order:-1}
+  .monograma{position:absolute;left:50%;top:54%;width:min(96vw,520px);aspect-ratio:1;translate:-50% -50%;opacity:.09;pointer-events:none}
+  .monograma img{width:100%;height:100%;animation:gira 90s linear infinite}
+  .anel{position:absolute;left:50%;top:56%;width:min(70vw,360px);aspect-ratio:1;translate:-50% -50%;border-radius:50%;border:1px solid var(--linha)}
+  .anel::after{content:"";position:absolute;inset:18px;border-radius:50%;border:1px dashed rgba(149,32,74,.18)}
+  .modelo{position:relative;z-index:2;height:calc(100% - 34px);width:auto;max-width:none;filter:drop-shadow(0 28px 30px rgba(42,28,32,.22))}
+  .chip{position:absolute;z-index:4;display:flex;align-items:center;gap:10px;padding:9px 14px 9px 9px;border-radius:14px;background:rgba(252,250,247,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 16px 34px -18px rgba(42,28,32,.35);border:1px solid rgba(255,255,255,.7);text-align:left}
+  .chip b{display:block;font-size:.66rem;font-weight:600;color:var(--tinta);letter-spacing:.01em;line-height:1.3}
+  .chip small{display:block;font-size:.6rem;color:var(--suave);line-height:1.3}
+  .chip .av{flex:none;width:28px;height:28px;border-radius:50%;background:var(--vinho);display:grid;place-items:center}
+  .chip .av img{width:16px;height:16px}
+  .chip-1{left:0;top:50%}
+  .chip-2{right:0;top:76%}
+  .selo{position:absolute;z-index:4;right:8px;top:4%;width:78px;height:78px;border-radius:50%;background:var(--creme-claro);box-shadow:0 14px 30px -16px rgba(42,28,32,.35);display:grid;place-items:center}
+  .selo svg{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);animation:gira 22s linear infinite}
+  .selo text{font-family:var(--sans);font-size:7.6px;font-weight:500;text-transform:uppercase;fill:var(--vinho)}
+  .selo img{width:26px;height:26px}
+  @keyframes gira{to{transform:rotate(360deg)}}
+
+  /* lado texto */
+  .hero-texto{text-align:center;padding:20px 0 28px}
+  .hero-texto .marca{display:none}
+  .hero-texto .eyebrow{margin-bottom:14px}
+  .hero h1{font-family:var(--sans);font-weight:300;font-size:clamp(1.95rem,8.3vw,4.1rem);line-height:1.08;letter-spacing:-.025em;margin:0 auto 16px;color:var(--tinta)}
+  .hero h1 em{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.12em;letter-spacing:-.01em;color:var(--vinho)}
+  .hero h1 strong{font-weight:600;white-space:nowrap}
+  .nw{white-space:nowrap}
+  .hero .lead{max-width:36ch;margin:0 auto 24px;font-size:.98rem}
+  .hero .lead strong{color:var(--tinta);font-weight:500}
+  .rolar{display:none}
+  .confianca{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 18px;margin-top:16px;list-style:none;font-size:.7rem;color:var(--suave);letter-spacing:.04em}
+  .confianca li{display:inline-flex;align-items:center;gap:6px}
+  .confianca svg{width:14px;height:14px;color:var(--vinho)}
+
+  /* faixa no pé do hero */
+  .faixa{position:relative;z-index:5;background:var(--vinho);overflow:hidden;padding:15px 0}
+  .faixa-trilho{display:flex;width:max-content;animation:desliza 34s linear infinite}
+  .faixa span{display:inline-flex;align-items:center;gap:26px;padding-right:26px;font-family:var(--serif);font-style:italic;font-size:1.3rem;color:#fff;white-space:nowrap}
+  .faixa img{width:14px;height:14px;opacity:.85}
+  @keyframes desliza{to{transform:translateX(-50%)}}
+
+  /* ---------- EXCLUSIVIDADE ---------- */
+  .exclusivo{padding:92px 0 88px;background:var(--creme-claro);text-align:center}
+  .exclusivo .wrap{max-width:680px}
+  .exclusivo .titulo{margin:18px auto 20px;max-width:17ch}
+  .exclusivo .lead{max-width:34ch;margin:0 auto 48px}
+  .pilares{list-style:none;display:grid;border-top:1px solid var(--areia)}
+  .pilares li{display:flex;flex-direction:column;align-items:center;gap:6px;padding:26px 0;border-bottom:1px solid var(--areia)}
+  .pilares .n{font-family:var(--serif);font-style:italic;font-size:1.5rem;line-height:1;color:var(--vinho)}
+  .pilares p{font-size:.98rem;color:var(--tinta);max-width:28ch}
+
+  /* ---------- GALERIA ---------- */
+  .galeria{padding:96px 0 100px;text-align:center}
+  .galeria .titulo{margin:18px auto 44px;max-width:16ch}
+  .grade{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding-bottom:44px;text-align:left}
+  .foto{position:relative;overflow:hidden;background:var(--areia);border-radius:4px}
+  .foto img{width:100%;height:100%;object-fit:cover}
+  .foto--larga{grid-column:1/-1;aspect-ratio:4/5}
+  .foto--alta{aspect-ratio:3/4.4}
+  .foto img[data-parallax]{position:absolute;inset:-6% 0;height:112%}
+  .foto figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;background:linear-gradient(to top,rgba(42,28,32,.55),transparent);color:#fff;font-size:.56rem;font-weight:500;letter-spacing:.16em;white-space:nowrap;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:opacity .9s var(--ease-out) .6s,transform .9s var(--ease-out) .6s}
+  .foto.visivel figcaption{opacity:1;transform:none}
+  .foto--larga figcaption{font-size:.7rem;padding:44px 18px 16px}
+  .grade .foto:nth-child(3),.grade .foto:nth-child(5){transform:translateY(44px)}
+  .grade .foto:nth-child(6){display:none}
+  .galeria-cta{margin-top:56px}
+
+  /* ---------- CTA FINAL ---------- */
+  .final{position:relative;background:var(--vinho);color:#fff;text-align:center;padding:100px 0 92px;overflow:hidden}
+  .aneis{position:absolute;left:50%;top:-40px;width:640px;height:640px;margin-left:-320px;pointer-events:none}
+  .aneis i{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(255,255,255,.1);animation:respira 7s var(--ease) infinite}
+  .aneis i:nth-child(2){inset:80px;animation-delay:-2.3s}
+  .aneis i:nth-child(3){inset:160px;animation-delay:-4.6s}
+  @keyframes respira{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.04);opacity:1}}
+  .final .wrap{position:relative;z-index:1;max-width:640px}
+  .final .emblema{width:58px;height:58px;margin:0 auto 34px}
+  .final .emblema.visivel{animation:gira 40s linear infinite}
+  .final .eyebrow{color:rgba(255,255,255,.8)}
+  .final .titulo{font-size:clamp(2.1rem,8.4vw,3.6rem);margin:18px auto 16px;max-width:14ch}
+  .final .titulo em{color:#fff}
+  .final .lead{color:rgba(255,255,255,.82);max-width:32ch;margin:0 auto 34px}
+  .final .microcopy{color:rgba(255,255,255,.62)}
+  .final .logo-branca{width:120px;height:auto;margin:56px auto 0}
+  .final .logo-branca.visivel{opacity:.75}
+
+  footer{background:var(--vinho-escuro);color:rgba(255,255,255,.55);text-align:center;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;padding:22px 20px calc(22px + env(safe-area-inset-bottom))}
+
+  /* ---------- CTA FIXO (mobile) ---------- */
+  .fixo{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:14px 16px calc(14px + env(safe-area-inset-bottom));background:linear-gradient(to top,rgba(247,242,236,.98) 62%,rgba(247,242,236,0));transform:translateY(110%);transition:transform .6s var(--ease-out);pointer-events:none}
+  .fixo.on{transform:none;pointer-events:auto}
+  .fixo .btn{max-width:none}
+
+  /* ---------- ANIMAÇÕES ---------- */
+  /* palavras dos títulos sobem por máscara */
+  .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}
+  .w > span{display:inline-block}
+  .js .split .w > span{transform:translateY(110%);transition:transform 1.1s var(--ease-out);transition-delay:calc(var(--i) * 55ms + var(--base, 0ms))}
+  .js .split.visivel .w > span{transform:none}
+
+  .js .intro{opacity:0;transform:translateY(16px);transition:opacity 1.1s var(--ease-out),transform 1.1s var(--ease-out)}
+  .js.carregou .intro{opacity:1;transform:none}
+  .js.carregou .d1{transition-delay:.15s}
+  .js.carregou .d3{transition-delay:.85s}
+  .js.carregou .d4{transition-delay:1s}
+  .js.carregou .d5{transition-delay:1.25s}
+
+  .js .modelo{opacity:0;transform:translateY(40px) scale(.97);transition:opacity 1.4s var(--ease-out) .15s,transform 1.6s var(--ease-out) .15s}
+  .js.carregou .modelo{opacity:1;transform:none}
+  .js .monograma{opacity:0;scale:.8;transition:opacity 2s var(--ease-out),scale 2.4s var(--ease-out)}
+  .js.carregou .monograma{opacity:.09;scale:1}
+  .js .anel{opacity:0;scale:.85;transition:opacity 1.6s var(--ease-out) .3s,scale 1.8s var(--ease-out) .3s}
+  .js.carregou .anel{opacity:1;scale:1}
+  .js .chip{opacity:0;transform:translateY(14px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out)}
+  .js.carregou .chip-1{opacity:1;transform:none;transition-delay:1.3s}
+  .js.carregou .chip-2{opacity:1;transform:none;transition-delay:1.6s}
+  .js.carregou .chip{animation:flutua 6s var(--ease) 2.6s infinite}
+  .js.carregou .chip-2{animation-delay:3.4s}
+  @keyframes flutua{0%,100%{translate:0 0}50%{translate:0 -6px}}
+  .js .selo{opacity:0;transform:scale(.6) rotate(-40deg);transition:opacity .9s var(--ease-out) 1.1s,transform 1.2s var(--ease-out) 1.1s}
+  .js.carregou .selo{opacity:1;transform:none}
+
+  .js .rev{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease-out),transform 1s var(--ease-out)}
+  .js .rev.visivel{opacity:1;transform:none}
+  .js .pilares li{opacity:0;transform:translateY(18px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out)}
+  .js .pilares li.visivel{opacity:1;transform:none}
+  .js .pilares li:nth-child(2){transition-delay:.12s}
+  .js .pilares li:nth-child(3){transition-delay:.24s}
+
+  .js .foto img{clip-path:inset(0 0 100% 0);scale:1.15;transition:clip-path 1.3s var(--ease-out),scale 1.8s var(--ease-out)}
+  .js .foto.visivel img{clip-path:inset(0 0 0 0);scale:1}
+  @media (hover:hover){
+    .js .foto.visivel:hover img{scale:1.045}
+  }
+
+  /* ---------- DESKTOP ---------- */
+  @media (min-width:900px){
+    :root{--gutter:48px}
+    .hero-corpo{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);align-items:center;gap:40px;padding-top:0}
+    .hero{height:100svh;min-height:680px;max-height:1000px}
+    .hero-corpo{min-height:0}
+    .marca-mobile{display:none}
+    .hero-texto{order:0;text-align:left;padding:24px 0}
+    .hero-texto .marca{display:flex;justify-content:flex-start;padding:0 0 clamp(28px,5vh,52px)}
+    .hero-texto .marca img{width:150px}
+    .hero-texto .eyebrow::after{display:none}
+    .hero h1{margin-left:0;max-width:16ch;font-size:clamp(2.6rem,min(4vw,7vh),3.9rem);margin-bottom:20px}
+    .hero .lead{margin-left:0;font-size:1.08rem;max-width:44ch;margin-bottom:34px}
+    .hero .btn{max-width:400px;min-height:64px;font-size:.84rem}
+    .confianca{justify-content:flex-start}
+    .hero-visual{order:1;height:100%;min-height:0;align-self:stretch}
+    .monograma{width:min(46vw,680px);top:52%;left:54%}
+    .anel{width:min(34vw,500px);top:52%}
+    .modelo{height:92%}
+    .chip{padding:11px 18px 11px 11px}
+    .chip b{font-size:.74rem}.chip small{font-size:.66rem}
+    .chip .av{width:34px;height:34px}.chip .av img{width:19px;height:19px}
+    .chip-1{left:3%;top:40%}
+    .chip-2{right:-2%;top:62%}
+    .selo{width:118px;height:118px;right:6%;top:12%}
+    .selo img{width:34px;height:34px}
+    .rolar{display:flex;align-items:center;gap:12px;margin-top:clamp(20px,4vh,40px);font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--suave)}
+    .rolar i{display:block;width:1px;height:38px;background:var(--linha);position:relative;overflow:hidden}
+    .rolar i::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:var(--vinho);animation:cai 2.2s var(--ease) infinite}
+    @keyframes cai{to{top:100%}}
+    .pilares{grid-template-columns:repeat(3,1fr);border-top:0}
+    .pilares li{border-bottom:0;padding:8px 24px}
+    .pilares li + li{border-left:1px solid var(--areia)}
+    .grade{grid-template-columns:repeat(3,1fr);gap:20px;padding-bottom:64px}
+    .foto--larga{grid-column:auto;aspect-ratio:3/4.4}
+    .grade .foto:nth-child(n){transform:none}
+    .grade .foto:nth-child(3n+2){transform:translateY(64px)}
+    .grade .foto:nth-child(6){display:block}
+    .fixo{display:none}
+    .foto figcaption{font-size:.62rem;letter-spacing:.22em}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{transition-duration:.01ms!important;transition-delay:0s!important;animation:none!important}
+    .js .intro,.js .rev,.js .pilares li{opacity:1;transform:none}
+    .js .split .w > span{transform:none}
+    .js .foto img{clip-path:none}
+    .js .foto img{scale:1}
+    .js .modelo,.js .chip,.js .anel{opacity:1;transform:none;scale:1}
+    .js .monograma{opacity:.09;scale:1}
+    .js .selo{opacity:1;transform:none}
+  }
+</style>
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<div class="progresso" id="progresso" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="seta" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-corpo">
+    <img class="marca-mobile intro" src="logo-rosa-madder.png" alt="Rosa Madder" width="900" height="308">
+    <div class="hero-texto">
+      <div class="marca intro"><img src="logo-rosa-madder.png" alt="Rosa Madder" width="900" height="308"></div>
+      <span class="eyebrow intro d1">Grupo VIP · Manduri/SP</span>
+      <h1 class="split" style="--base:300ms">Se você é mulher de <span class="nw"><em>Manduri/SP e região</em>,</span> entre no nosso <strong>Grupo VIP</strong></h1>
+      <p class="lead intro d3">Para ficar <strong>por dentro das nossas novidades</strong>, direto no seu WhatsApp.</p>
+      <div class="intro d4">
+        <a class="btn js-grupo" id="cta-hero" href="#" target="_blank" rel="noopener">
+          Entrar no Grupo VIP
+          <svg class="seta" aria-hidden="true"><use href="#seta"/></svg>
+        </a>
+        <ul class="confianca">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Gratuito</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Manduri/SP e região</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h4M16 17l5-5-5-5M21 12H9"/></svg>Saia quando quiser</li>
+        </ul>
+      </div>
+      <div class="rolar intro d5" aria-hidden="true"><i></i>Role para ver os looks</div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="monograma" aria-hidden="true"><img src="emblema-rosa.png" alt=""></div>
+      <div class="anel" aria-hidden="true"></div>
+      <img class="modelo" data-parallax-y="0.04"
+           src="img/hero-recorte-1300.webp"
+           srcset="img/hero-recorte-900.webp 330w, img/hero-recorte-1300.webp 476w"
+           sizes="(min-width: 900px) 30vw, 46vw"
+           alt="Cliente da Rosa Madder usando vestido longo creme com estampa de folhagem"
+           width="476" height="1300" fetchpriority="high">
+      <div class="chip chip-1" aria-hidden="true">
+        <span class="av"><img src="emblema-rosa-branco.png" alt=""></span>
+        <span><b>Grupo VIP Rosa Madder</b><small>Você foi convidada</small></span>
+      </div>
+      <div class="chip chip-2" aria-hidden="true">
+        <span class="av"><img src="emblema-rosa-branco.png" alt=""></span>
+        <span><b>Novidades da loja</b><small>Direto no seu WhatsApp</small></span>
+      </div>
+      <div class="selo" aria-hidden="true">
+        <svg viewBox="0 0 100 100">
+          <defs><path id="circulo" d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/></defs>
+          <text><textPath href="#circulo" textLength="249" lengthAdjust="spacing">Grupo VIP · Rosa Madder · Manduri/SP · </textPath></text>
+        </svg>
+        <img src="emblema-rosa.png" alt="" width="240" height="240">
+      </div>
+    </div>
+  </div>
+
+  <div class="faixa" aria-hidden="true">
+    <div class="faixa-trilho">
+      <span>Grupo VIP <img src="emblema-rosa-branco.png" alt=""> Rosa Madder <img src="emblema-rosa-branco.png" alt=""> Manduri/SP e região <img src="emblema-rosa-branco.png" alt=""> Novidades no seu WhatsApp <img src="emblema-rosa-branco.png" alt=""></span>
+      <span>Grupo VIP <img src="emblema-rosa-branco.png" alt=""> Rosa Madder <img src="emblema-rosa-branco.png" alt=""> Manduri/SP e região <img src="emblema-rosa-branco.png" alt=""> Novidades no seu WhatsApp <img src="emblema-rosa-branco.png" alt=""></span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- EXCLUSIVIDADE -->
+  <section class="exclusivo">
+    <div class="wrap">
+      <span class="eyebrow rev">O Grupo VIP</span>
+      <h2 class="titulo split">Um espaço só nosso, para acompanhar <em>cada novidade</em></h2>
+      <p class="lead rev">Tudo o que chega na Rosa Madder, direto no seu WhatsApp.</p>
+      <ol class="pilares">
+        <li><span class="n">01</span><p>Novidades da loja direto no seu WhatsApp</p></li>
+        <li><span class="n">02</span><p>Feito para as mulheres de Manduri/SP e região</p></li>
+        <li><span class="n">03</span><p>Entrada gratuita, em menos de um minuto</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="galeria">
+    <div class="wrap">
+      <span class="eyebrow rev">Na arara</span>
+      <h2 class="titulo split">Um pouco do que <em>chega na loja</em></h2>
+
+      <div class="grade">
+        <figure class="foto foto--larga">
+          <img data-parallax="0.06" loading="lazy" decoding="async"
+               src="img/look-macacao-caramelo-1080.webp"
+               srcset="img/look-macacao-caramelo-640.webp 640w, img/look-macacao-caramelo-1080.webp 1080w"
+               sizes="(min-width: 900px) 33vw, 92vw"
+               alt="Macacão pantalona caramelo" width="1080" height="1440" style="object-position:50% 30%">
+          <figcaption>Macacão caramelo</figcaption>
+        </figure>
+        <figure class="foto foto--alta">
+          <img loading="lazy" decoding="async"
+               src="img/look-conjunto-terracota-640.webp"
+               srcset="img/look-conjunto-terracota-640.webp 640w, img/look-conjunto-terracota-1080.webp 1080w"
+               sizes="(min-width: 900px) 33vw, 46vw"
+               alt="Conjunto de regata e short-saia terracota" width="640" height="853" style="object-position:50% 25%">
+          <figcaption>Conjunto terracota</figcaption>
+        </figure>
+        <figure class="foto foto--alta">
+          <img loading="lazy" decoding="async"
+               src="img/look-conjunto-floral-640.webp"
+               srcset="img/look-conjunto-floral-640.webp 640w, img/look-conjunto-floral-1080.webp 1080w"
+               sizes="(min-width: 900px) 33vw, 46vw"
+               alt="Conjunto de blusa e saia midi com estampa floral caramelo" width="640" height="853" style="object-position:50% 25%">
+          <figcaption>Conjunto floral</figcaption>
+        </figure>
+        <figure class="foto foto--alta">
+          <img loading="lazy" decoding="async"
+               src="img/look-conjunto-chocolate-640.webp"
+               srcset="img/look-conjunto-chocolate-640.webp 640w, img/look-conjunto-chocolate-1080.webp 1080w"
+               sizes="(min-width: 900px) 33vw, 46vw"
+               alt="Conjunto de blusa e saia longa chocolate" width="640" height="1138" style="object-position:50% 30%">
+          <figcaption>Conjunto chocolate</figcaption>
+        </figure>
+        <figure class="foto foto--alta">
+          <img loading="lazy" decoding="async"
+               src="img/look-vestido-vermelho-640.webp"
+               sizes="(min-width: 900px) 33vw, 46vw"
+               alt="Vestido longo branco com estampa vermelha" width="640" height="1136" style="object-position:50% 35%">
+          <figcaption>Vestido estampado</figcaption>
+        </figure>
+        <figure class="foto foto--alta">
+          <img loading="lazy" decoding="async"
+               src="img/look-vestido-folhagem-640.webp"
+               srcset="img/look-vestido-folhagem-640.webp 640w, img/look-vestido-folhagem-1080.webp 1080w"
+               sizes="(min-width: 900px) 33vw, 46vw"
+               alt="Vestido longo creme com estampa de folhagem" width="640" height="853" style="object-position:50% 40%">
+          <figcaption>Vestido folhagem</figcaption>
+        </figure>
+      </div>
+
+      <div class="galeria-cta rev">
+        <div class="ornamento" style="margin-bottom:28px"><img src="emblema-rosa.png" alt="" width="240" height="240"></div>
+        <a class="btn js-grupo" href="#" target="_blank" rel="noopener">
+          Quero ver no grupo
+          <svg class="seta" aria-hidden="true"><use href="#seta"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final" id="final">
+    <div class="aneis" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="wrap">
+      <img class="emblema rev" src="emblema-rosa-branco.png" alt="" width="240" height="240" loading="lazy">
+      <span class="eyebrow rev">Convite</span>
+      <h2 class="titulo split">Seu lugar no <em>Grupo VIP</em> espera por você</h2>
+      <p class="lead rev">Mulher de Manduri/SP e região: entre agora e fique por dentro das nossas novidades.</p>
+      <div class="rev">
+        <a class="btn btn--claro js-grupo" href="#" target="_blank" rel="noopener">
+          Entrar no Grupo VIP
+          <svg class="seta" aria-hidden="true"><use href="#seta"/></svg>
+        </a>
+        <p class="microcopy">Gratuito · você sai quando quiser</p>
+      </div>
+      <img class="logo-branca rev" src="logo-rosa-madder-branca.png" alt="Rosa Madder" width="900" height="308" loading="lazy">
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="ano"></span> Rosa Madder · Manduri/SP</footer>
+
+<!-- CTA fixo no celular: aparece depois do hero e some no CTA final -->
+<div class="fixo" id="fixo" aria-hidden="true">
+  <a class="btn js-grupo" href="#" target="_blank" rel="noopener" tabindex="-1">
+    Entrar no Grupo VIP
+    <svg class="seta" aria-hidden="true"><use href="#seta"/></svg>
+  </a>
+</div>
+
+<script>
+/* ===================== CONFIGURAÇÃO ===================== */
+// Link de convite do Grupo VIP no WhatsApp
+const LINK_GRUPO_VIP = "https://chat.whatsapp.com/SEU-LINK-AQUI";
+// ID do Pixel da Meta (deixe "" se o Pixel já estiver instalado de outra forma)
+const META_PIXEL_ID = "";
+/* ======================================================== */
+
+// Meta Pixel (carrega só se houver ID)
+if (META_PIXEL_ID) {
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', META_PIXEL_ID);
+  fbq('track', 'PageView');
+}
+
+// Botões → Grupo VIP + evento Lead + brilho que segue o dedo/mouse
+document.querySelectorAll(".js-grupo").forEach(function (a) {
+  a.href = LINK_GRUPO_VIP;
+  a.addEventListener("click", function () {
+    if (typeof fbq === "function") fbq("track", "Lead", { content_name: "Grupo VIP WhatsApp" });
+  });
+  a.addEventListener("pointermove", function (e) {
+    const r = a.getBoundingClientRect();
+    a.style.setProperty("--mx", (e.clientX - r.left) + "px");
+    a.style.setProperty("--my", (e.clientY - r.top) + "px");
+  });
+});
+document.getElementById("ano").textContent = new Date().getFullYear();
+
+// Divide os títulos em palavras para a animação de máscara
+document.querySelectorAll(".split").forEach(function (el) {
+  let i = 0;
+  (function walk(node) {
+    Array.from(node.childNodes).forEach(function (n) {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(function (part) {
+          if (!part) return;
+          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(" ")); return; }
+          const w = document.createElement("span"); w.className = "w";
+          const s = document.createElement("span"); s.textContent = part; s.style.setProperty("--i", i++);
+          w.appendChild(s); frag.appendChild(w);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1) walk(n);
+    });
+  })(el);
+});
+
+// Abertura
+const root = document.documentElement;
+let iniciou = false;
+function iniciar(){ if (iniciou) return; iniciou = true; requestAnimationFrame(function(){ root.classList.add("carregou"); document.querySelector(".hero h1").classList.add("visivel"); }); }
+const heroImg = document.querySelector(".modelo");
+if (heroImg.complete) iniciar(); else { heroImg.addEventListener("load", iniciar); heroImg.addEventListener("error", iniciar); }
+setTimeout(iniciar, 1200);
+
+// Revelação ao rolar
+const io = new IntersectionObserver(function (entries) {
+  entries.forEach(function (e) {
+    if (e.isIntersecting) { e.target.classList.add("visivel"); io.unobserve(e.target); }
+  });
+}, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+document.querySelectorAll(".rev, .foto, .pilares li, section .split").forEach(function (el) { io.observe(el); });
+
+// CTA fixo
+const fixo = document.getElementById("fixo");
+let heroVisivel = true, finalVisivel = false;
+function atualizaFixo(){ fixo.classList.toggle("on", !heroVisivel && !finalVisivel); }
+new IntersectionObserver(function (e) { heroVisivel = e[0].isIntersecting; atualizaFixo(); }).observe(document.getElementById("cta-hero"));
+new IntersectionObserver(function (e) { finalVisivel = e[0].isIntersecting; atualizaFixo(); }, { threshold: 0.15 }).observe(document.getElementById("final"));
+
+// Parallax sutil + barra de progresso
+const reduz = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const px = Array.from(document.querySelectorAll("[data-parallax]"));
+const barra = document.getElementById("progresso");
+let ticking = false;
+function noScroll() {
+  const vh = window.innerHeight;
+  const max = document.documentElement.scrollHeight - vh;
+  barra.style.transform = "scaleX(" + (max > 0 ? window.scrollY / max : 0).toFixed(4) + ")";
+  if (!reduz) px.forEach(function (img) {
+    const r = img.parentElement.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > vh) return;
+    const centro = (r.top + r.height / 2 - vh / 2) / vh;
+    img.style.translate = "0 " + (centro * -parseFloat(img.dataset.parallax) * 100).toFixed(2) + "%";
+  });
+  ticking = false;
+}
+window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(noScroll); } }, { passive: true });
+noScroll();
+</script>
+</body>
+</html>
